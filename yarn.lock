@@ -667,6 +667,23 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@editorjs/editorjs@^2.15.0":
+  version "2.15.0"
+  resolved "https://registry.npm.taobao.org/@editorjs/editorjs/download/@editorjs/editorjs-2.15.0.tgz#7bb1cd38863e613be904a7e3d048a99590c9f5d9"
+  integrity sha1-e7HNOIY+YTvpBKfj0EiplZDJ9dk=
+  dependencies:
+    codex-notifier "^1.1.2"
+
+"@editorjs/header@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.npm.taobao.org/@editorjs/header/download/@editorjs/header-2.3.0.tgz#ce48414e3d8b39b1ed5633d35e3684b158fb9e98"
+  integrity sha1-zkhBTj2LObHtVjPTXjaEsVj7npg=
+
+"@editorjs/list@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npm.taobao.org/@editorjs/list/download/@editorjs/list-1.4.0.tgz#e92459a8ac2305bc4385245e329c8b5c8437456a"
+  integrity sha1-6SRZqKwjBbxDhSReMpyLXIQ3RWo=
+
 "@hapi/address@2.x.x":
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.0.0.tgz#9f05469c88cb2fd3dcd624776b54ee95c312126a"
@@ -769,6 +786,13 @@
   version "1.5.2"
   resolved "https://registry.npm.taobao.org/@types/q/download/@types/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha1-aQoUdbhPKohP0HzXl8APXzE1bqg=
+
+"@types/quill@1.3.8":
+  version "1.3.8"
+  resolved "https://registry.npm.taobao.org/@types/quill/download/@types/quill-1.3.8.tgz#713d52dc7b7545822677df72a5d8e5a0f35b2ee6"
+  integrity sha1-cT1S3Ht1RYImd99ypdjloPNbLuY=
+  dependencies:
+    parchment "^1.1.2"
 
 "@types/webpack-env@^1.13.9":
   version "1.13.9"
@@ -2187,6 +2211,11 @@ clone@^1.0.2:
   resolved "https://registry.npm.taobao.org/clone/download/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
 
+clone@^2.1.1:
+  version "2.1.2"
+  resolved "https://registry.npm.taobao.org/clone/download/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
+
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.npm.taobao.org/co/download/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
@@ -2205,6 +2234,11 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/code-point-at/download/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
+
+codex-notifier@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npm.taobao.org/codex-notifier/download/codex-notifier-1.1.2.tgz#a733079185f4c927fa296f1d71eb8753fe080895"
+  integrity sha1-pzMHkYX0ySf6KW8dceuHU/4ICJU=
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -3397,6 +3431,11 @@ event-pubsub@4.3.0:
   resolved "https://registry.npm.taobao.org/event-pubsub/download/event-pubsub-4.3.0.tgz#f68d816bc29f1ec02c539dc58c8dd40ce72cb36e"
   integrity sha1-9o2Ba8KfHsAsU53FjI3UDOcss24=
 
+eventemitter3@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.npm.taobao.org/eventemitter3/download/eventemitter3-2.0.3.tgz?cache=0&sync_timestamp=1560950873670&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feventemitter3%2Fdownload%2Feventemitter3-2.0.3.tgz#b5e1079b59fb5e1ba2771c0a993be060a58c99ba"
+  integrity sha1-teEHm1n7XhuidxwKmTvgYKWMmbo=
+
 eventemitter3@^3.0.0:
   version "3.1.2"
   resolved "https://registry.npm.taobao.org/eventemitter3/download/eventemitter3-3.1.2.tgz?cache=0&sync_timestamp=1560950873670&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feventemitter3%2Fdownload%2Feventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
@@ -3512,7 +3551,7 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
-extend@~3.0.2:
+extend@^3.0.1, extend@^3.0.2, extend@~3.0.2:
   version "3.0.2"
   resolved "https://registry.npm.taobao.org/extend/download/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
   integrity sha1-+LETa0Bx+9jrFAr/hYsQGewpFfo=
@@ -3568,6 +3607,11 @@ fast-deep-equal@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/fast-deep-equal/download/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
   integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
+
+fast-diff@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npm.taobao.org/fast-diff/download/fast-diff-1.1.2.tgz#4b62c42b8e03de3f848460b639079920695d0154"
+  integrity sha1-S2LEK44D3j+EhGC2OQeZIGldAVQ=
 
 fast-diff@^1.1.2:
   version "1.2.0"
@@ -5957,6 +6001,11 @@ ora@^3.4.0:
     strip-ansi "^5.2.0"
     wcwidth "^1.0.1"
 
+orderedmap@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/orderedmap/download/orderedmap-1.0.0.tgz#d90fc2ba1ed085190907d601dec6e6a53f8d41ba"
+  integrity sha1-2Q/Cuh7QhRkJB9YB3sbmpT+NQbo=
+
 original@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npm.taobao.org/original/download/original-1.0.2.tgz#e442a61cffe1c5fd20a65f3261c26663b303f25f"
@@ -6086,6 +6135,11 @@ param-case@2.1.x:
   integrity sha1-35T9jPZTHs915r75oIWPvHK+Ikc=
   dependencies:
     no-case "^2.2.0"
+
+parchment@^1.1.2, parchment@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.npm.taobao.org/parchment/download/parchment-1.1.4.tgz#aeded7ab938fe921d4c34bc339ce1168bc2ffde5"
+  integrity sha1-rt7Xq5OP6SHUw0vDOc4RaLwv/eU=
 
 parent-module@^1.0.0:
   version "1.0.1"
@@ -6688,6 +6742,105 @@ property-expr@^1.5.0:
   resolved "https://registry.npm.taobao.org/property-expr/download/property-expr-1.5.1.tgz#22e8706894a0c8e28d58735804f6ba3a3673314f"
   integrity sha1-IuhwaJSgyOKNWHNYBPa6OjZzMU8=
 
+prosemirror-commands@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.npm.taobao.org/prosemirror-commands/download/prosemirror-commands-1.0.8.tgz#3b21e8b2f2e1c04ddb831b2d4055084b6d627bcc"
+  integrity sha1-OyHosvLhwE3bgxstQFUIS21ie8w=
+  dependencies:
+    prosemirror-model "^1.0.0"
+    prosemirror-state "^1.0.0"
+    prosemirror-transform "^1.0.0"
+
+prosemirror-dropcursor@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npm.taobao.org/prosemirror-dropcursor/download/prosemirror-dropcursor-1.1.1.tgz#c60ed1ed6c58804a06a75db06a0d993b087b7622"
+  integrity sha1-xg7R7WxYgEoGp12wag2ZOwh7diI=
+  dependencies:
+    prosemirror-state "^1.0.0"
+    prosemirror-transform "^1.1.0"
+    prosemirror-view "^1.1.0"
+
+prosemirror-gapcursor@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npm.taobao.org/prosemirror-gapcursor/download/prosemirror-gapcursor-1.0.4.tgz#4ba663fb8511616e18ad222c904403cfbf6866dc"
+  integrity sha1-S6Zj+4URYW4YrSIskEQDz79oZtw=
+  dependencies:
+    prosemirror-keymap "^1.0.0"
+    prosemirror-model "^1.0.0"
+    prosemirror-state "^1.0.0"
+    prosemirror-view "^1.0.0"
+
+prosemirror-inputrules@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npm.taobao.org/prosemirror-inputrules/download/prosemirror-inputrules-1.0.4.tgz#8ae84d9c147abb448b86063ff422e801c4b1658d"
+  integrity sha1-iuhNnBR6u0SLhgY/9CLoAcSxZY0=
+  dependencies:
+    prosemirror-state "^1.0.0"
+    prosemirror-transform "^1.0.0"
+
+prosemirror-keymap@^1.0.0, prosemirror-keymap@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/prosemirror-keymap/download/prosemirror-keymap-1.0.1.tgz#03ef32b828e3a859dfb570eb84928bf2e5330bc2"
+  integrity sha1-A+8yuCjjqFnftXDrhJKL8uUzC8I=
+  dependencies:
+    prosemirror-state "^1.0.0"
+    w3c-keyname "^1.1.8"
+
+prosemirror-model@^1.0.0, prosemirror-model@^1.1.0, prosemirror-model@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.npm.taobao.org/prosemirror-model/download/prosemirror-model-1.7.1.tgz#f140a6e366e1e283aa7a94dbb8c2c7d13139689e"
+  integrity sha1-8UCm42bh4oOqepTbuMLH0TE5aJ4=
+  dependencies:
+    orderedmap "^1.0.0"
+
+prosemirror-schema-list@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npm.taobao.org/prosemirror-schema-list/download/prosemirror-schema-list-1.0.3.tgz#539caafa4f9314000943bd783be4017165ec0bd6"
+  integrity sha1-U5yq+k+TFAAJQ714O+QBcWXsC9Y=
+  dependencies:
+    prosemirror-model "^1.0.0"
+    prosemirror-transform "^1.0.0"
+
+prosemirror-state@^1.0.0, prosemirror-state@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.npm.taobao.org/prosemirror-state/download/prosemirror-state-1.2.3.tgz#b61e88e55336a4e5be088c0d21ac05f18cdd3dcd"
+  integrity sha1-th6I5VM2pOW+CIwNIawF8YzdPc0=
+  dependencies:
+    prosemirror-model "^1.0.0"
+    prosemirror-transform "^1.0.0"
+
+prosemirror-tables@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.npm.taobao.org/prosemirror-tables/download/prosemirror-tables-0.8.1.tgz#ea99ad4effec99dd4e2fdb0b33cce4d2547eed83"
+  integrity sha1-6pmtTv/smd1OL9sLM8zk0lR+7YM=
+  dependencies:
+    prosemirror-keymap "^1.0.0"
+    prosemirror-model "^1.0.0"
+    prosemirror-state "^1.0.0"
+    prosemirror-transform "^1.0.0"
+    prosemirror-view "^1.0.0"
+
+prosemirror-transform@^1.0.0, prosemirror-transform@^1.1.0:
+  version "1.1.3"
+  resolved "https://registry.npm.taobao.org/prosemirror-transform/download/prosemirror-transform-1.1.3.tgz#28cfdf1f9ee514edc40466be7b7db39eed545fdf"
+  integrity sha1-KM/fH57lFO3EBGa+e32znu1UX98=
+  dependencies:
+    prosemirror-model "^1.0.0"
+
+prosemirror-utils@^0.9.4:
+  version "0.9.5"
+  resolved "https://registry.npm.taobao.org/prosemirror-utils/download/prosemirror-utils-0.9.5.tgz#34d7e5bc12f3e6774261cc664bac9499899663d4"
+  integrity sha1-NNflvBLz5ndCYcxmS6yUmYmWY9Q=
+
+prosemirror-view@^1.0.0, prosemirror-view@^1.1.0, prosemirror-view@^1.9.12:
+  version "1.9.13"
+  resolved "https://registry.npm.taobao.org/prosemirror-view/download/prosemirror-view-1.9.13.tgz#8f146038e776fd0aa6d7811c8b9cb11813b9e319"
+  integrity sha1-jxRgOOd2/Qqm14Eci5yxGBO54xk=
+  dependencies:
+    prosemirror-model "^1.1.0"
+    prosemirror-state "^1.0.0"
+    prosemirror-transform "^1.1.0"
+
 proxy-addr@~2.0.5:
   version "2.0.5"
   resolved "https://registry.npm.taobao.org/proxy-addr/download/proxy-addr-2.0.5.tgz#34cbd64a2d81f4b1fd21e76f9f06c8a45299ee34"
@@ -6801,6 +6954,27 @@ querystringify@^2.1.1:
   version "2.1.1"
   resolved "https://registry.npm.taobao.org/querystringify/download/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
   integrity sha1-YOWl/WSn+L+k0qsu1v30yFutFU4=
+
+quill-delta@^3.6.2:
+  version "3.6.3"
+  resolved "https://registry.npm.taobao.org/quill-delta/download/quill-delta-3.6.3.tgz#b19fd2b89412301c60e1ff213d8d860eac0f1032"
+  integrity sha1-sZ/SuJQSMBxg4f8hPY2GDqwPEDI=
+  dependencies:
+    deep-equal "^1.0.1"
+    extend "^3.0.2"
+    fast-diff "1.1.2"
+
+quill@^1.3.6:
+  version "1.3.6"
+  resolved "https://registry.npm.taobao.org/quill/download/quill-1.3.6.tgz#99f4de1fee85925a0d7d4163b6d8328f23317a4d"
+  integrity sha1-mfTeH+6FkloNfUFjttgyjyMxek0=
+  dependencies:
+    clone "^2.1.1"
+    deep-equal "^1.0.1"
+    eventemitter3 "^2.0.3"
+    extend "^3.0.1"
+    parchment "^1.1.4"
+    quill-delta "^3.6.2"
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
@@ -8032,6 +8206,46 @@ tinycolor2@^1.4.1:
   resolved "https://registry.npmjs.org/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
   integrity sha1-9PrTM0R7wLB9TcjpIJ2POaisd+g=
 
+tiptap-commands@^1.10.11:
+  version "1.10.11"
+  resolved "https://registry.npm.taobao.org/tiptap-commands/download/tiptap-commands-1.10.11.tgz#9df1ef7b553e601598892074f9faa6d836fd8238"
+  integrity sha1-nfHve1U+YBWYiSB0+fqm2Db9gjg=
+  dependencies:
+    prosemirror-commands "^1.0.8"
+    prosemirror-inputrules "^1.0.4"
+    prosemirror-model "^1.7.1"
+    prosemirror-schema-list "^1.0.3"
+    prosemirror-state "^1.2.3"
+    prosemirror-tables "^0.8.1"
+    prosemirror-utils "^0.9.4"
+    tiptap-utils "^1.6.0"
+
+tiptap-utils@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.npm.taobao.org/tiptap-utils/download/tiptap-utils-1.6.0.tgz#6af0bf52f93b291b9be5f6adb92c9afc35dd8d62"
+  integrity sha1-avC/Uvk7KRub5fatuSya/DXdjWI=
+  dependencies:
+    prosemirror-model "^1.7.1"
+    prosemirror-state "^1.2.3"
+    prosemirror-tables "^0.8.1"
+    prosemirror-utils "^0.9.4"
+
+tiptap@^1.24.0:
+  version "1.24.0"
+  resolved "https://registry.npm.taobao.org/tiptap/download/tiptap-1.24.0.tgz#f386c8fca71275a4794a0e95eca2ea37267d370d"
+  integrity sha1-84bI/KcSdaR5Sg6V7KLqNyZ9Nw0=
+  dependencies:
+    prosemirror-commands "^1.0.8"
+    prosemirror-dropcursor "^1.1.1"
+    prosemirror-gapcursor "^1.0.4"
+    prosemirror-inputrules "^1.0.4"
+    prosemirror-keymap "^1.0.1"
+    prosemirror-model "^1.7.1"
+    prosemirror-state "^1.2.3"
+    prosemirror-view "^1.9.12"
+    tiptap-commands "^1.10.11"
+    tiptap-utils "^1.6.0"
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.npm.taobao.org/tmp/download/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
@@ -8522,6 +8736,11 @@ vuex@^3.0.1:
   version "3.1.1"
   resolved "https://registry.npm.taobao.org/vuex/download/vuex-3.1.1.tgz#0c264bfe30cdbccf96ab9db3177d211828a5910e"
   integrity sha1-DCZL/jDNvM+Wq52zF30hGCilkQ4=
+
+w3c-keyname@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.npm.taobao.org/w3c-keyname/download/w3c-keyname-1.1.8.tgz#4e2219663760fd6535b7a1550f1552d71fc9372c"
+  integrity sha1-TiIZZjdg/WU1t6FVDxVS1x/JNyw=
 
 watchpack@^1.5.0:
   version "1.6.0"
