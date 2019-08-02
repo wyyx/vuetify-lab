@@ -8,8 +8,12 @@
     </v-toolbar>
 
     <v-content>
-      <div class="xxx" :aaa="articleCollectTemplate"></div>
-      <div class="article-collect-template">
+      <v-layout row wrap class="pa-3">
+        <v-flex>
+          <v-btn color="primary" to="/tiny-mce-editor">TinyMCE Editor</v-btn>
+        </v-flex>
+      </v-layout>
+      <!-- <div class="article-collect-template">
         <div
           v-for="formControl in articleCollectTemplate.formControls"
           :key="formControl.name"
@@ -17,10 +21,9 @@
           <DynamicForm v-bind="formControl"></DynamicForm>
           <div>{{ formControl }}</div>
         </div>
-      </div>
+      </div> -->
 
-      <!-- <div id="editor" v-html="partHtml"></div> -->
-      <div id="editor"></div>
+      <router-view></router-view>
     </v-content>
   </v-app>
 </template>
@@ -50,7 +53,7 @@ const editor = new EditorJS({
 
 export default Vue.extend({
   name: 'App',
-  components: { DynamicForm },
+  components: {},
   data() {
     return {
       editor: null,

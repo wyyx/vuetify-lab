@@ -21,6 +21,12 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/About.vue")
+    },
+    {
+      path: "/tiny-mce-editor",
+      name: "tiny-mce-editor",
+      component: () =>
+        import(/* webpackChunkName: "tiny-mce-editor" */ "./views/TinyMceEditor.vue")
     }
   ]
 });
