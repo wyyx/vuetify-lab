@@ -3,16 +3,11 @@
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
         <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <v-btn color="primary" to="/tiny-mce-editor">TinyMCE Editor</v-btn>
       </v-toolbar-title>
     </v-toolbar>
 
     <v-content>
-      <v-layout row wrap class="pa-3">
-        <v-flex>
-          <v-btn color="primary" to="/tiny-mce-editor">TinyMCE Editor</v-btn>
-        </v-flex>
-      </v-layout>
       <!-- <div class="article-collect-template">
         <div
           v-for="formControl in articleCollectTemplate.formControls"

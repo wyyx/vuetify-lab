@@ -1,6 +1,6 @@
 export const initHtml = `<div class="course-item" data-search-weight="80.86174">
 <a href="//coding.imooc.com/class/264.html" target="_blank" class="course-detail-title">
-  <img src="//img3.mukewang.com/szimg/5b614ac3000185f805400300-240-180.jpg" class="course-item-img ">
+  <img  src="//img3.mukewang.com/szimg/5b614ac3000185f805400300-240-180.jpg" class="course-item-img ">
 </a>
 <div class="course-item-detail">
   <a href="//coding.imooc.com/class/264.html" target="_blank" class="course-detail-title">
@@ -17,6 +17,17 @@ export const initHtml = `<div class="course-item" data-search-weight="80.86174">
                       高级
                   </span>
             <i class="course-study-number icon-set_sns"></i><span>209</span>
+  </div>
+  <div><img  src="/building.jpg" ></div>
+  <div>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, hic
+      corrupti! Blanditiis doloribus aliquam natus illo accusamus animi
+      obcaecati expedita, ex, quae beatae reiciendis perspiciatis delectus
+      officiis? Iusto et eum praesentium voluptate cupiditate. Tenetur, facere
+      corporis animi illum neque minima corrupti vero labore commodi porro
+      impedit cupiditate vel ut ea!
+    </p>
   </div>
 </div>
 </div>`

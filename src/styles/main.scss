@@ -1,0 +1,147 @@
+@import './typo.scss';
+@import './util.scss';
+@import './spacing.scss';
+@import './layout.scss';
+@import './visual.scss';
+
+html,
+body {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  box-sizing: border-box;
+  overflow-y: unset;
+}
+
+* {
+  letter-spacing: 0.05rem !important;
+  box-sizing: border-box;
+}
+
+.application {
+  height: 100%;
+}
+
+.class-selection-box .v-text-field {
+  padding-top: 0px;
+}
+
+.student-list-wrapper .v-list {
+  background: #f1f1f1 !important;
+}
+
+.grade-input-edit-rating.v-rating i {
+  font-size: 36px !important;
+}
+
+td,
+th {
+  padding: 0 12px !important;
+}
+
+.teacher-helper {
+  position: fixed !important;
+  right: 1rem !important;
+  bottom: 5rem !important;
+}
+
+.school-run-helper {
+  position: fixed !important;
+  right: 1rem !important;
+  bottom: 5rem !important;
+}
+
+.grade-level-select .v-input__control {
+  width: 150px !important;
+}
+
+.student-list-wrapper .v-list__tile {
+  padding: 0 10px;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+.v-toolbar .v-toolbar__content {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.create-article-page .editor {
+  width: 100% !important;
+  padding: 0px 0px 66px 0px !important;
+  height: unset !important;
+  width: 100% !important;
+
+  .ql-editor {
+    padding: 0px !important;
+    min-height: 100vh !important;
+  }
+}
+
+iframe {
+  width: 100% !important;
+}
+
+.convert-article-page {
+  .editor {
+    height: unset !important;
+    padding: 8px 8px 8px 8px !important;
+  }
+
+  .editor .ql-editor {
+    padding: 0px !important;
+  }
+
+  .editor .ql-editor > p {
+    display: flex;
+  }
+
+  .editor .ql-editor > * {
+    word-break: break-all;
+    line-break: auto;
+  }
+
+  .v-text-field__prefix {
+    word-break: keep-all !important;
+    padding-right: 16px !important;
+  }
+}
+
+.v-tooltip__content {
+  width: 96% !important;
+  left: 2% !important;
+}
+
+.convert-article-page {
+  .preview-wrapper * {
+    max-width: 100% !important;
+  }
+
+  .preview-wrapper img {
+    height: auto !important;
+  }
+}
+
+.dynamic-page {
+  .article-content * {
+    max-width: 100% !important;
+  }
+
+  .article-content img {
+    height: auto !important;
+  }
+}
+
+.dynamic-detail-page {
+  .article-content * {
+    max-width: 100% !important;
+  }
+
+  .article-content img {
+    height: auto !important;
+  }
+}
