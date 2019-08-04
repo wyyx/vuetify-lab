@@ -1,6 +1,8 @@
 <template>
   <div class="tinymce-editor-page  app-fill-height">
-    <!-- <v-btn color="success" @click="printContent">Print Content</v-btn> -->
+    <v-btn dark color="blue accent-3" @click="printContent">
+      Print Content
+    </v-btn>
 
     <Editor
       ref="editor"
@@ -8,6 +10,55 @@
       v-model="content"
       :init="init"
     ></Editor>
+
+    <div
+      class="image-tool-wrapper app-both-center"
+      v-if="isMobile && showImageTool"
+    >
+      <v-layout column wrap class="image-tool">
+        <v-flex>
+          <v-btn
+            @click="rotateLeft"
+            large
+            class="elevation-2"
+            color="white"
+            icon
+            ><v-icon>rotate_left</v-icon></v-btn
+          >
+        </v-flex>
+        <v-flex>
+          <v-btn
+            @click="rotateRight"
+            large
+            class="elevation-2"
+            color="white"
+            icon
+            ><v-icon>rotate_right</v-icon></v-btn
+          >
+        </v-flex>
+        <v-flex>
+          <v-btn
+            style="transform: rotate(90deg)"
+            @click="flipVerticalVue"
+            large
+            class="elevation-2"
+            color="white"
+            icon
+            ><v-icon>flip</v-icon></v-btn
+          >
+        </v-flex>
+        <v-flex>
+          <v-btn
+            @click="flipHorizonVue"
+            large
+            class="elevation-2"
+            color="white"
+            icon
+            ><v-icon>flip</v-icon></v-btn
+          >
+        </v-flex>
+      </v-layout>
+    </div>
   </div>
 </template>
 
@@ -59,6 +110,32 @@ import "tinymce/plugins/autosave";
 import "tinymce/plugins/lists";
 import "tinymce/plugins/autolink";
 
+import { isMobile } from "is-mobile";
+
+const contentStyle = `
+.mce-content-body img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.mce-content-body h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 150%;
+}
+
+.mce-content-body p,
+div {
+  line-height: 150%;
+  word-spacing: 0.1rem;
+  letter-spacing: 0.1rem;
+  font-size: 14px;
+}
+`;
+
 import { initHtml } from "../mocks/html.mock";
 import { initHtml2 } from "../mocks/html2.mock";
 import {
@@ -75,10 +152,13 @@ export default Vue.extend({
   },
   data: function() {
     return {
-      content: initHtml,
+      isMobile: isMobile(),
+      showImageTool: false,
+      content: initHtml2,
       init: {
         language_url: "/tinymce/langs/zh_CN.js", // 语言包的路径
         language: "zh_CN", //语言
+
         mobile: {
           theme: "mobile",
           plugins: ["autosave", "lists", "autolink"],
@@ -86,15 +166,29 @@ export default Vue.extend({
         },
         skin_url: "/tinymce/skins/ui/oxide",
         content_css: ["/tinymce/skins/content/default/content.min.css"],
-        content_style: `.mce-content-body img {
-          max-width: 100% !important;
-          height: auto !important;
-        }`,
+        content_style: contentStyle,
         plugins:
           "print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern help",
         toolbar:
           "formatselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | link image media pageembed | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent | removeformat | addcomment",
         image_advtab: true,
+        init_instance_callback: editor => {
+          console.log("Editor: " + editor.id + " is now initialized.");
+          const that: any = this;
+
+          // show image tool when mobile
+          if (that.isMobile) {
+            editor.on("NodeChange", e => {
+              const img: HTMLImageElement = tinymce.activeEditor.selection.getNode();
+
+              if (img.nodeName.toLowerCase() === "img") {
+                that.showImageTool = true;
+              } else {
+                that.showImageTool = false;
+              }
+            });
+          }
+        },
         setup: function(editor) {
           editor.ui.registry.addContextToolbar("imageEdit", {
             predicate: function(node) {
@@ -232,6 +326,50 @@ export default Vue.extend({
       const editor: any = this.$refs.editor;
       editor.value;
       console.log("TCL: printContent -> editor.value", editor.value);
+    },
+    scrollIntoViewCenter(element) {
+      if (!element) {
+        return;
+      }
+
+      element.scrollIntoView({ block: "center" });
+    },
+    getCurrentNode() {
+      return tinymce.activeEditor.selection.getNode() as HTMLElement;
+    },
+    rotateLeft() {
+      const img = this.getCurrentNode() as HTMLImageElement;
+      this.scrollIntoViewCenter(img);
+
+      if (img.nodeName.toLowerCase() === "img") {
+        rotateImage(img, -90);
+        setMargin(img);
+      }
+    },
+    rotateRight() {
+      const img = this.getCurrentNode() as HTMLImageElement;
+      this.scrollIntoViewCenter(img);
+
+      if (img.nodeName.toLowerCase() === "img") {
+        rotateImage(img, 90);
+        setMargin(img);
+      }
+    },
+    flipVerticalVue() {
+      const img = this.getCurrentNode() as HTMLImageElement;
+      this.scrollIntoViewCenter(img);
+
+      if (img.nodeName.toLowerCase() === "img") {
+        flipVertical(img);
+      }
+    },
+    flipHorizonVue() {
+      const img = this.getCurrentNode() as HTMLImageElement;
+      this.scrollIntoViewCenter(img);
+
+      if (img.nodeName.toLowerCase() === "img") {
+        flipHorizon(img);
+      }
     }
   }
 });
@@ -241,5 +379,34 @@ export default Vue.extend({
 .aaa {
   transform: rotateZ(-90);
   margin-bottom: 200px;
+}
+
+.image-tool-wrapper {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+}
+
+.mce-content-body img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.mce-content-body p,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 150%;
+}
+
+.mce-content-body p,
+div {
+  line-height: 180%;
+  word-spacing: 0.1rem;
 }
 </style>

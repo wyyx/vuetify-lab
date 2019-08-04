@@ -757,6 +757,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/is-mobile@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.npm.taobao.org/@types/is-mobile/download/@types/is-mobile-0.3.0.tgz#821825eeddb9016c41dd11c0dd6d2db8621432fc"
+  integrity sha1-ghgl7t25AWxB3RHA3W0tuGIUMvw=
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.npm.taobao.org/@types/minimatch/download/@types/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -4814,6 +4819,11 @@ is-glob@^4.0.0:
   integrity sha1-dWfb6fL14kZ7x3q4PEopSCQHpdw=
   dependencies:
     is-extglob "^2.1.1"
+
+is-mobile@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/is-mobile/download/is-mobile-2.1.0.tgz#4c0cab72f3358dd9986007389b30729fae80da0b"
+  integrity sha1-TAyrcvM1jdmYYAc4mzByn66A2gs=
 
 is-number@^3.0.0:
   version "3.0.0"

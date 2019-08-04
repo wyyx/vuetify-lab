@@ -11,6 +11,7 @@
     "@tinymce/tinymce-vue": "^2.1.0",
     "core-js": "^2.6.5",
     "element-ui": "^2.9.2",
+    "is-mobile": "^2.1.0",
     "iview": "^3.4.2",
     "tinymce": "^5.0.12",
     "vue": "^2.6.10",
@@ -19,6 +20,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@types/is-mobile": "^0.3.0",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-plugin-typescript": "^3.8.0",
