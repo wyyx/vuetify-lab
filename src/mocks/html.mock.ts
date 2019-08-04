@@ -1,4 +1,5 @@
 export const initHtml = `<div class="course-item" data-search-weight="80.86174">
+<div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ea architecto nobis vel! Distinctio quo voluptatum quisquam, illum cupiditate itaque.</div>
 <a href="//coding.imooc.com/class/264.html" target="_blank" class="course-detail-title">
   <img  src="//img3.mukewang.com/szimg/5b614ac3000185f805400300-240-180.jpg" class="course-item-img ">
 </a>

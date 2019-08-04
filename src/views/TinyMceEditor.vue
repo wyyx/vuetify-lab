@@ -1,6 +1,7 @@
 <template>
   <div class="tinymce-editor-page  app-fill-height">
     <!-- <v-btn color="success" @click="printContent">Print Content</v-btn> -->
+
     <Editor
       ref="editor"
       class="my-2 app-fill-height"
@@ -40,7 +41,13 @@ import "tinymce/plugins/autolink";
 
 import { initHtml } from "../mocks/html.mock";
 import { initHtml2 } from "../mocks/html2.mock";
-import { getCssRotate } from "../utils/css.util";
+import {
+  getCssRotate,
+  rotateImage,
+  setMargin,
+  flipVertical,
+  flipHorizon
+} from "../utils/editor.util";
 
 export default Vue.extend({
   components: {
@@ -70,7 +77,7 @@ export default Vue.extend({
             predicate: function(node) {
               return node.nodeName.toLowerCase() === "img";
             },
-            items: "rotateLeftMy rotateRightMy",
+            items: "rotateLeftMy rotateRightMy flipvMy fliphMy",
             position: "node",
             scope: "node"
           });
@@ -89,47 +96,51 @@ export default Vue.extend({
             icon: "rotate-left",
             tooltip: "逆时针旋转90度",
             onAction: function(_) {
-              const imgNode: HTMLImageElement = tinymce.activeEditor.selection.getNode();
+              const img: HTMLImageElement = tinymce.activeEditor.selection.getNode();
 
-              console.log("TCL: imgNode", imgNode);
-
-              const currentRotate = getCssRotate(imgNode.style.transform);
-
-              const rotate =
-                currentRotate === 360 || currentRotate === -360
-                  ? 0
-                  : currentRotate;
-
-              if (imgNode.nodeName.toLowerCase() === "img") {
-                imgNode.style.transform = ` rotate(${rotate - 90}deg)`;
-                imgNode.style.marginBottom = `${(imgNode.width -
-                  imgNode.height) /
-                  2}px`;
+              if (img.nodeName.toLowerCase() === "img") {
+                rotateImage(img, -90);
+                setMargin(img);
               }
             }
           });
 
-          // rotate left 90deg
+          // rotate right 90deg
           editor.ui.registry.addButton("rotateRightMy", {
             icon: "rotate-right",
             tooltip: "顺时针旋转90度",
             onAction: function(_) {
-              const imgNode: HTMLImageElement = tinymce.activeEditor.selection.getNode();
+              const img: HTMLImageElement = tinymce.activeEditor.selection.getNode();
 
-              console.log("TCL: imgNode", imgNode);
+              if (img.nodeName.toLowerCase() === "img") {
+                rotateImage(img, 90);
+                setMargin(img);
+              }
+            }
+          });
 
-              const currentRotate = getCssRotate(imgNode.style.transform);
+          // flip v
+          editor.ui.registry.addButton("flipvMy", {
+            icon: "flip-vertically",
+            tooltip: "垂直翻转",
+            onAction: function(_) {
+              const img: HTMLImageElement = tinymce.activeEditor.selection.getNode();
 
-              const rotate =
-                currentRotate === 360 || currentRotate === -360
-                  ? 0
-                  : currentRotate;
+              if (img.nodeName.toLowerCase() === "img") {
+                flipVertical(img);
+              }
+            }
+          });
 
-              if (imgNode.nodeName.toLowerCase() === "img") {
-                imgNode.style.transform = ` rotate(${rotate + 90}deg)`;
-                imgNode.style.marginBottom = `${(imgNode.width -
-                  imgNode.height) /
-                  2}px`;
+          // flip h
+          editor.ui.registry.addButton("fliphMy", {
+            icon: "flip-horizontally",
+            tooltip: "水平翻转",
+            onAction: function(_) {
+              const img: HTMLImageElement = tinymce.activeEditor.selection.getNode();
+
+              if (img.nodeName.toLowerCase() === "img") {
+                flipHorizon(img);
               }
             }
           });
@@ -182,18 +193,13 @@ export default Vue.extend({
   },
   mounted() {
     tinymce.activeEditor.on("mouseup", () => {
-      console.log("mouseup ");
-
+      const img: HTMLImageElement = tinymce.activeEditor.selection.getNode();
+      const transform = img.style.transform;
       setTimeout(() => {
-        const imgNode: HTMLImageElement = tinymce.activeEditor.selection.getNode();
-        if (imgNode.nodeName.toLowerCase() === "img") {
-          imgNode.style.marginBottom = `${(imgNode.width - imgNode.height) /
-            2}px`;
-
-          console.log(
-            "TCL: mounted -> imgNode.style.marginBottom",
-            imgNode.style.marginBottom
-          );
+        if (img.nodeName.toLowerCase() === "img") {
+          img.style.transform;
+          img.style.transform = transform;
+          setMargin(img);
         }
       }, 0);
     });
