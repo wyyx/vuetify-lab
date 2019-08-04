@@ -1,9 +1,8 @@
 <template>
   <v-app>
     <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
+      <v-toolbar-title class="headline">
         <span>Vuetify</span>
-        <v-btn color="primary" to="/tiny-mce-editor">TinyMCE Editor</v-btn>
       </v-toolbar-title>
     </v-toolbar>
 
@@ -87,6 +86,11 @@ export default {
         ]
       }
     };
+  },
+  created() {
+    this.$router.push({
+      name: "tiny-mce-editor"
+    });
   }
 };
 </script>

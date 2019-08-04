@@ -25,15 +25,35 @@ import "tinymce/themes/silver";
 import "tinymce/themes/mobile";
 
 // Any plugins you want to use has to be imported
-import "tinymce/plugins/paste";
-import "tinymce/plugins/link";
-import "tinymce/plugins/wordcount";
-import "tinymce/plugins/image";
-import "tinymce/plugins/imagetools";
-import "tinymce/plugins/contextmenu";
-import "tinymce/plugins/emoticons";
-import "tinymce/plugins/fullscreen";
+import "tinymce/plugins/print";
+import "tinymce/plugins/preview";
 import "tinymce/plugins/fullpage";
+import "tinymce/plugins/searchreplace";
+import "tinymce/plugins/autolink";
+import "tinymce/plugins/directionality";
+import "tinymce/plugins/visualblocks";
+import "tinymce/plugins/visualchars";
+import "tinymce/plugins/fullscreen";
+import "tinymce/plugins/image";
+import "tinymce/plugins/link";
+import "tinymce/plugins/media";
+import "tinymce/plugins/template";
+import "tinymce/plugins/codesample";
+import "tinymce/plugins/table";
+import "tinymce/plugins/charmap";
+import "tinymce/plugins/hr";
+import "tinymce/plugins/pagebreak";
+import "tinymce/plugins/nonbreaking";
+import "tinymce/plugins/anchor";
+import "tinymce/plugins/toc";
+import "tinymce/plugins/insertdatetime";
+import "tinymce/plugins/advlist";
+import "tinymce/plugins/lists";
+import "tinymce/plugins/wordcount";
+import "tinymce/plugins/imagetools";
+import "tinymce/plugins/textpattern";
+import "tinymce/plugins/help";
+
 // mobile plugins
 import "tinymce/plugins/autosave";
 import "tinymce/plugins/lists";
@@ -64,18 +84,17 @@ export default Vue.extend({
           plugins: ["autosave", "lists", "autolink"],
           toolbar: ["undo", "redo", "bold", "italic", "styleselect", "image"]
         },
-        plugins: "wordcount image imagetools fullpage fullscreen",
         skin_url: "/tinymce/skins/ui/oxide",
         content_css: ["/tinymce/skins/content/default/content.min.css"],
-        content_style: `.mce-content-body * { 
+        content_style: `.mce-content-body img {
           max-width: 100% !important;
           height: auto !important;
         }`,
-        // height: 800,
-        toolbar: ["undo redo image fullpage fullscreen"],
-        // imagetools_toolbar:
-        //   "rotateleft rotateright | flipv fliph | editimage imageoptions",
-        // imagetools_cors_hosts: ["img3.mukewang.com"],
+        plugins:
+          "print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern help",
+        toolbar:
+          "formatselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | link image media pageembed | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent | removeformat | addcomment",
+        image_advtab: true,
         setup: function(editor) {
           editor.ui.registry.addContextToolbar("imageEdit", {
             predicate: function(node) {
@@ -174,7 +193,7 @@ export default Vue.extend({
             ]
           },
           {
-            title: "区块",
+            title: "基块",
             items: [
               { title: "段落", format: "p" },
               { title: "引用", format: "blockquote" },
