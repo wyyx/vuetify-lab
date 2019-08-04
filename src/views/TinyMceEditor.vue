@@ -11,6 +11,13 @@
       :init="init"
     ></Editor>
 
+    <div v-if="false" class="image-preview app-both-center">
+      <img
+        src="https://static.oschina.net/uploads/space/2019/0801/072738_8gJF_2720166.jpg"
+        alt=""
+      />
+    </div>
+
     <div
       class="image-tool-wrapper app-both-center"
       v-if="isMobile && showImageTool"
@@ -38,13 +45,12 @@
         </v-flex>
         <v-flex>
           <v-btn
-            style="transform: rotate(90deg)"
             @click="flipVerticalVue"
             large
             class="elevation-2"
             color="white"
             icon
-            ><v-icon>flip</v-icon></v-btn
+            ><v-icon style="transform: rotate(90deg)">flip</v-icon></v-btn
           >
         </v-flex>
         <v-flex>
@@ -124,15 +130,15 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 150%;
+  line-height: 150% !important;
 }
 
 .mce-content-body p,
 div {
-  line-height: 150%;
-  word-spacing: 0.1rem;
-  letter-spacing: 0.1rem;
-  font-size: 14px;
+  line-height: 180% !important;
+  word-spacing: 0.1rem !important;
+  letter-spacing: 0.1rem !important;
+  font-size: 14px !important;
 }
 `;
 
@@ -152,6 +158,8 @@ export default Vue.extend({
   },
   data: function() {
     return {
+      showImagePreview: false,
+      currentImage: "",
       isMobile: isMobile(),
       showImageTool: false,
       content: initHtml2,
@@ -162,7 +170,7 @@ export default Vue.extend({
         mobile: {
           theme: "mobile",
           plugins: ["autosave", "lists", "autolink"],
-          toolbar: ["undo", "redo", "bold", "italic", "styleselect", "image"]
+          toolbar: ["undo redo bold italic styleselect image"]
         },
         skin_url: "/tinymce/skins/ui/oxide",
         content_css: ["/tinymce/skins/content/default/content.min.css"],
@@ -320,6 +328,23 @@ export default Vue.extend({
         }
       }, 0);
     });
+
+    tinymce.activeEditor.on("dblclick ", () => {
+      console.log("TCL: mounted -> dblclick");
+      const img = this.getCurrentNode();
+      if (img.nodeName.toLowerCase() === "img") {
+        this.currentImage = (img as HTMLImageElement).src;
+        // this.showImagePreview = true;
+      }
+    });
+
+    setTimeout(() => {
+      console.log("eeeeeeeeeeeeeeeeeeeeee");
+      // tinymce.execCommand("bold", true);
+      // const allActions = tinymce.activeEditor.ui.registry.getAll();
+      // console.log("TCL: mounted -> allActions", allActions);
+      // tinymce.activeEditor.ui.registry.getAll().buttons.rotateleftmy.onAction();
+    }, 5000);
   },
   methods: {
     printContent() {
@@ -386,6 +411,16 @@ export default Vue.extend({
   top: 0px;
   right: 0px;
   height: 100%;
+}
+
+.image-preview {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .mce-content-body img {
