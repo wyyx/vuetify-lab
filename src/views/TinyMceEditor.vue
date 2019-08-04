@@ -4,7 +4,7 @@
 
     <Editor
       ref="editor"
-      class="my-2 app-fill-height"
+      class="editor my-2 app-fill-height"
       v-model="content"
       :init="init"
     ></Editor>
@@ -67,6 +67,10 @@ export default Vue.extend({
         plugins: "wordcount image imagetools fullpage fullscreen",
         skin_url: "/tinymce/skins/ui/oxide",
         content_css: ["/tinymce/skins/content/default/content.min.css"],
+        content_style: `.mce-content-body * { 
+          max-width: 100% !important;
+          height: auto !important;
+        }`,
         // height: 800,
         toolbar: ["undo redo image fullpage fullscreen"],
         // imagetools_toolbar:
