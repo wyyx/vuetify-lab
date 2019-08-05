@@ -11,11 +11,24 @@
       :init="init"
     ></Editor>
 
-    <div v-if="false" class="image-preview app-both-center">
-      <img
-        src="https://static.oschina.net/uploads/space/2019/0801/072738_8gJF_2720166.jpg"
-        alt=""
-      />
+    <div v-if="showImagePreview" class="image-preview app-both-center">
+      <vue-picture-swipe
+        :options="{
+          shareEl: false,
+          fullscreenEl: false,
+          captionEl: false,
+          escKey: true
+        }"
+        :items="[
+          {
+            src: currentImage,
+            thumbnail: currentImage,
+            w: 600,
+            h: 400,
+            title: 'Will be used for caption'
+          }
+        ]"
+      ></vue-picture-swipe>
     </div>
 
     <div
@@ -71,6 +84,8 @@
 <script lang="ts">
 import Vue from "vue";
 import Editor from "@tinymce/tinymce-vue";
+import VuePictureSwipe from "vue-picture-swipe";
+import interact from "interactjs";
 
 // import tinymce
 import "tinymce/tinymce";
@@ -154,7 +169,8 @@ import {
 
 export default Vue.extend({
   components: {
-    Editor
+    Editor,
+    VuePictureSwipe
   },
   data: function() {
     return {
@@ -316,6 +332,9 @@ export default Vue.extend({
       }
     };
   },
+  created() {
+    console.log("TCL: tinymce", tinymce);
+  },
   mounted() {
     tinymce.activeEditor.on("mouseup", () => {
       const img: HTMLImageElement = tinymce.activeEditor.selection.getNode();
@@ -329,14 +348,34 @@ export default Vue.extend({
       }, 0);
     });
 
-    tinymce.activeEditor.on("dblclick ", () => {
-      console.log("TCL: mounted -> dblclick");
-      const img = this.getCurrentNode();
-      if (img.nodeName.toLowerCase() === "img") {
-        this.currentImage = (img as HTMLImageElement).src;
-        // this.showImagePreview = true;
-      }
-    });
+    // tinymce.activeEditor.on("dblclick ", () => {
+    //   console.log("TCL: mounted -> dblclick");
+    //   const img = this.getCurrentNode();
+    //   console.log("TCL: mounted -> img", img);
+    //   if (img.nodeName.toLowerCase() === "img") {
+    //     this.currentImage = (img as HTMLImageElement).src;
+    //     console.log("TCL: mounted -> this.currentImage", this.currentImage);
+    //     this.showImagePreview = true;
+    //   }
+    // });
+
+    // console.log(
+    //   "TCL: mounted -> this.getEditorContentRef()",
+    //   this.getEditorContentRef()
+    // );
+
+    // interact(this.getEditorContentRef() || document)
+    //   // .on("tap", function(event) {
+    //   //   console.log("TCL: mounted -> tap");
+    //   //   event.preventDefault();
+    //   // })
+    //   .on("doubletap", function(event) {
+    //     console.log("TCL: mounted -> doubletap");
+    //     event.preventDefault();
+    //   });
+    // // .on("hold", function(event) {
+    // //   console.log("TCL: mounted -> hold");
+    // // });
 
     setTimeout(() => {
       console.log("eeeeeeeeeeeeeeeeeeeeee");
@@ -346,6 +385,7 @@ export default Vue.extend({
       // tinymce.activeEditor.ui.registry.getAll().buttons.rotateleftmy.onAction();
     }, 5000);
   },
+  destroyed() {},
   methods: {
     printContent() {
       const editor: any = this.$refs.editor;
@@ -358,6 +398,17 @@ export default Vue.extend({
       }
 
       element.scrollIntoView({ block: "center" });
+    },
+    getEditorContentRef() {
+      const iframe = document.querySelector(
+        ".tox-edit-area iframe"
+      ) as HTMLIFrameElement;
+
+      if (iframe && iframe.contentDocument) {
+        return iframe.contentDocument.querySelector(".mce-content-body");
+      } else {
+        return null;
+      }
     },
     getCurrentNode() {
       return tinymce.activeEditor.selection.getNode() as HTMLElement;
@@ -401,11 +452,6 @@ export default Vue.extend({
 </script>
 
 <style>
-.aaa {
-  transform: rotateZ(-90);
-  margin-bottom: 200px;
-}
-
 .image-tool-wrapper {
   position: absolute;
   top: 0px;
