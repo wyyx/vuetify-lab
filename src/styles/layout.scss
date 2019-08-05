@@ -1,0 +1,96 @@
+.app-fill-height {
+  height: 100% !important;
+}
+
+.app-fill-width {
+  width: 100% !important;
+}
+
+.app-flex {
+  display: flex;
+}
+
+.app-row {
+  flex-direction: row;
+}
+
+.app-wrap {
+  flex-wrap: wrap;
+}
+
+.app-nowrap {
+  flex-wrap: nowrap;
+}
+
+.app-column {
+  flex-direction: column;
+}
+
+.app-grow {
+  flex: 1 0 auto;
+}
+
+.app-shrink {
+  flex: 0 1 auto;
+}
+
+.app-both-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-h-center {
+  display: flex;
+  justify-content: center;
+}
+
+.app-v-center {
+  display: flex;
+  align-items: center;
+}
+
+.app-v-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+.app-absolute {
+  position: absolute !important;
+}
+
+.app-relative {
+  position: relative !important;
+}
+
+.app-scroll-y {
+  overflow-y: scroll !important;
+}
+
+.app-scroll-x {
+  overflow-x: scroll !important;
+}
+
+.app-z-index-10 {
+  z-index: 10 !important;
+}
+
+.app-z-index-20 {
+  z-index: 20 !important;
+}
+
+.app-z-index-30 {
+  z-index: 30 !important;
+}
+
+.app-z-index-40 {
+  z-index: 40 !important;
+}
+
+.app-z-index-50 {
+  z-index: 50 !important;
+}
+
+.app-inline-block {
+  display: inline-block !important;
+}

@@ -1,18 +1,12 @@
 <template>
   <v-app>
     <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
+      <v-toolbar-title class="headline">
         <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
       </v-toolbar-title>
     </v-toolbar>
 
     <v-content>
-      <v-layout row wrap class="pa-3">
-        <v-flex>
-          <v-btn color="primary" to="/tiny-mce-editor">TinyMCE Editor</v-btn>
-        </v-flex>
-      </v-layout>
       <!-- <div class="article-collect-template">
         <div
           v-for="formControl in articleCollectTemplate.formControls"
@@ -35,21 +29,8 @@ import Vue from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 import DynamicForm from './components/DynamicForm.component.vue'
 import { html } from './lab/temp.lab'
-import Quill, { RangeStatic } from 'quill'
-import EditorJS from '@editorjs/editorjs'
 import Header from '@editorjs/header'
 import List from '@editorjs/list'
-
-const editor = new EditorJS({
-  /**
-   * Id of Element that should contain Editor instance
-   */
-  holder: 'editor',
-  tools: {
-    header: Header,
-    list: List
-  }
-})
 
 export default Vue.extend({
   name: 'App',
@@ -114,7 +95,10 @@ export default Vue.extend({
       }
     }
   },
-  mounted() {},
-  beforeDestroy() {}
+  created() {
+    this.$router.push({
+      name: 'tiny-mce-editor'
+    })
+  }
 })
 </script>
