@@ -6,7 +6,7 @@
       </v-toolbar-title>
     </v-toolbar>
 
-    <v-content>
+    <v-content class="app-fill-height">
       <!-- <div class="article-collect-template">
         <div
           v-for="formControl in articleCollectTemplate.formControls"
@@ -16,6 +16,8 @@
           <div>{{ formControl }}</div>
         </div>
       </div> -->
+
+      <HelloWorld></HelloWorld>
 
       <router-view></router-view>
     </v-content>
@@ -28,7 +30,9 @@ import DynamicForm from "./components/DynamicForm.component.vue";
 
 export default {
   name: "App",
-  components: {},
+  components: {
+    HelloWorld
+  },
   data() {
     return {
       articleCollectTemplate: {
@@ -87,10 +91,11 @@ export default {
       }
     };
   },
+
   created() {
-    this.$router.push({
-      name: "tiny-mce-editor"
-    });
+    // this.$router.push({
+    //   name: "tiny-mce-editor"
+    // });
   }
 };
 </script>

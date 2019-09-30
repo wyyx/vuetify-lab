@@ -1,134 +1,160 @@
 <template>
-  <v-container>
-    <v-layout text-xs-center wrap>
-      <v-flex xs12>
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        ></v-img>
-      </v-flex>
+  <div class="container">
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
 
-      <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br />please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank"
-            >Discord Community</a
-          >
-        </p>
-      </v-flex>
+    <div class="content" id="articleContent">
+      <div class="ad-wrap"></div>
+      <p>微软开源了一套新的字体&nbsp;Cascadia Code。</p>
 
-      <v-flex mb-5 xs12>
-        <h2 class="headline font-weight-bold mb-3">What's next?</h2>
+      <p>
+        <img
+          height="182"
+          src="https://oscimg.oschina.net/oscnet/7ad5571dfce616276ca5a92b462650664f3.jpg"
+          width="700"
+          class="zoom-in-cursor"
+        />
+      </p>
 
-        <v-layout justify-center>
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-        </v-layout>
-      </v-flex>
+      <p>
+        Cascadia Code 是微软在 5 月份的&nbsp;Build
+        大会上宣布推出的等宽字体，微软介绍它是与新的终端 Windows Terminal
+        一起开发的，官方建议将其与终端应用和 VS、VS Code 等文本编辑器一起使用。
+      </p>
 
-      <v-flex xs12 mb-5>
-        <h2 class="headline font-weight-bold mb-3">Important Links</h2>
+      <p>
+        Cascadia Code
+        为命令行和代码编辑器提供了全新的体验，并且它还支持编程连字（Programming
+        Ligatures），就是在编写代码的时候，可以组合字符创建新的字形，这对于代码的可读性和呈现后的用户友好度都是一种很好的机制，同时这也增强了
+        Windows Terminal 的现代外观。。
+      </p>
 
-        <v-layout justify-center>
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-layout>
-      </v-flex>
+      <p>如下图所示，可以将不同字符变形为新字符：</p>
 
-      <v-flex xs12 mb-5>
-        <h2 class="headline font-weight-bold mb-3">Ecosystem</h2>
+      <p>
+        <img
+          alt=""
+          height="83"
+          src="https://oscimg.oschina.net/oscnet/ce175930877274c5780b0ab5d9072165b21.jpg"
+          width="700"
+          class="zoom-in-cursor"
+        />
+      </p>
 
-        <v-layout justify-center>
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-layout>
-      </v-flex>
-    </v-layout>
-  </v-container>
+      <p>
+        需要注意的是，如果使用的是 VS Code，则必须在设置中启用连字功能才能生效。
+      </p>
+
+      <p>
+        <img
+          height="270"
+          src="https://oscimg.oschina.net/oscnet/dda3f2ff0527e3435782a7afc54bbe05578.jpg"
+          width="700"
+          class="zoom-in-cursor"
+        />
+      </p>
+
+      <p>
+        微软还介绍了为什么这个字体叫“<span style="color:#333333"
+          ><span style="background-color:#ffffff"
+            >Cascadia Code”，其实这个名称源于 Windows Terminal
+            项目，在它发布之前，代号一直是 Cascadia，并且
+            Terminal&nbsp;中的一些源文件现在仍然使用这个名称。致敬&nbsp;Terminal，所以微软在代号后命名了字体。</span
+          ></span
+        >
+      </p>
+
+      <p style="text-align:left">
+        <span style="color:#333333"
+          >另外，微软此前还发起了为该字体名字投票的活动，最终“Cascadia
+          Code”胜出。&nbsp;</span
+        >
+      </p>
+
+      <p style="text-align:left">
+        <img
+          height="490"
+          src="https://oscimg.oschina.net/oscnet/8a51d1e1d824e4ec84653b25c131dd6c1f1.jpg"
+          width="700"
+          class="zoom-in-cursor"
+        />
+      </p>
+
+      <p>详情查看微软官方博客：</p>
+
+      <p>
+        <a href="https://devblogs.microsoft.com/commandline/cascadia-code/"
+          >https://devblogs.microsoft.com/commandline/cascadia-code</a
+        >
+      </p>
+
+      <p>查看项目：</p>
+
+      <p>
+        <a href="https://www.oschina.net/p/cascadia-code"
+          >https://www.oschina.net/p/cascadia-code</a
+        >
+      </p>
+    </div>
+
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <br />
+    zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz <br />
+  </div>
 </template>
 
-<script>
-export default {
-  data: () => ({
-    ecosystem: [
-      {
-        text: "vuetify-loader",
-        href: "https://github.com/vuetifyjs/vuetify-loader"
-      },
-      {
-        text: "github",
-        href: "https://github.com/vuetifyjs/vuetify"
-      },
-      {
-        text: "awesome-vuetify",
-        href: "https://github.com/vuetifyjs/awesome-vuetify"
-      }
-    ],
-    importantLinks: [
-      {
-        text: "Documentation",
-        href: "https://vuetifyjs.com"
-      },
-      {
-        text: "Chat",
-        href: "https://community.vuetifyjs.com"
-      },
-      {
-        text: "Made with Vuetify",
-        href: "https://madewithvuetifyjs.com"
-      },
-      {
-        text: "Twitter",
-        href: "https://twitter.com/vuetifyjs"
-      },
-      {
-        text: "Articles",
-        href: "https://medium.com/vuetify"
-      }
-    ],
-    whatsNext: [
-      {
-        text: "Explore components",
-        href: "https://vuetifyjs.com/components/api-explorer"
-      },
-      {
-        text: "Select a layout",
-        href: "https://vuetifyjs.com/layout/pre-defined"
-      },
-      {
-        text: "Frequently Asked Questions",
-        href: "https://vuetifyjs.com/getting-started/frequently-asked-questions"
-      }
-    ]
-  })
-};
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
+  //
+});
 </script>
 
-<style></style>
+<style>
+.container {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  will-change: transform;
+}
+</style>
