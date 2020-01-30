@@ -667,6 +667,16 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@editorjs/header@^2.3.0":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@editorjs/header/-/header-2.3.2.tgz#419b24196ce7142c0ae8bac837e6b5f68977dc8f"
+  integrity sha512-Chsnwo3kRTJGtWQdxikYfPCjgA3FtFmZM5mmFno7Pwjk0AQWBnU+Vb9TCIkYw+LpchWm+D+3Px7saRchCF2jnQ==
+
+"@editorjs/list@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@editorjs/list/-/list-1.4.0.tgz#e92459a8ac2305bc4385245e329c8b5c8437456a"
+  integrity sha512-iYDXGbVXvsAJbSxbjFMP4p7kS1zhQyNDqVNzkfMRhItulzKYlOMlFjTIGHqu5SxPy6NrcckhVFaWdfGDn5/gEA==
+
 "@hapi/address@2.x.x":
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.0.0.tgz#9f05469c88cb2fd3dcd624776b54ee95c312126a"
@@ -8535,10 +8545,10 @@ tinycolor2@^1.4.1:
   resolved "https://registry.npmjs.org/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
   integrity sha1-9PrTM0R7wLB9TcjpIJ2POaisd+g=
 
-tinymce@^5.0.12:
-  version "5.0.12"
-  resolved "https://registry.npm.taobao.org/tinymce/download/tinymce-5.0.12.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftinymce%2Fdownload%2Ftinymce-5.0.12.tgz#b9b217f76643b7c6d6066b3ed75936090cbf9e8f"
-  integrity sha1-ubIX92ZDt8bWBms+11k2CQy/no8=
+tinymce@^5.1.4:
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-5.1.4.tgz#a45282a68e66d0959bcae19a972f8ae52a358667"
+  integrity sha512-Y7JYnByNF2A4BzR2KIbKEQV90PHZ5OwsU5An1Qj1zbSI8aXCOOhffL04LqlGw5UP/ookaC/V9V41H5XJbp/l9w==
 
 tmp@^0.0.33:
   version "0.0.33"
